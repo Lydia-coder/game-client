@@ -7,6 +7,7 @@ This is a multiplayer online drinking game called "never have I ever". In this g
 ## Table of content
 - **[Technologies used](#technologies-used)**
 - **[Goals for this project](#goals-for-this-project)**
+- **[My git workflow](#my-git-workflow)**
 
 ## Technologies used
 
@@ -14,11 +15,18 @@ This is a multiplayer online drinking game called "never have I ever". In this g
 
 - **[react](./src/components/Room.js)**  
 - **[redux](./src/reducers/room.js)**  
+- **[Stream](./src/App.js)**  
 
 ## Goals for this project:
 - To make a multi player game
 - To learn how to use stream
 - To work in a team
+
+## My git workflow
+
+In this project I try to use:
+
+- Good commit messages
 
 
 ### In the project directory, you can run:
