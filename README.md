@@ -1,10 +1,29 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## What this project is about?
 
-In the project directory, you can run:
+This is a multiplayer online drinking game called "never have I ever". In this game the user can sign up and login and after that create a room to play in. After creating a room the player can fill out 5 questions to play in that room. Other users can join the game. After every answer the players get a response telling which player needs to drink. Then the players can click next question. It's fun game to play with friends!
 
-### `npm start`
+## Table of content
+- **[Technologies used](#technologies-used)**
+- **[Goals for this project](#goals-for-this-project)**
+
+## Technologies used
+
+#### 👀👇 Click links to view some samples in this project 👇👀
+
+- **[react](./src/components/Room.js)**  
+- **[redux](./src/reducers/room.js)**  
+
+## Goals for this project:
+- To make a multi player game
+- To learn how to use stream
+- To work in a team
+
+
+### In the project directory, you can run:
+
+`npm start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
