@@ -3,6 +3,7 @@ import Questions from "./Questions";
 import superagent from "superagent";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import {Form,Button} from "react-bootstrap"
 
 class CreateRoomAndQuestions extends Component {
   constructor() {
@@ -64,10 +65,10 @@ class CreateRoomAndQuestions extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.onSubmit}>
-          <label>Create New a Room:</label>
-          <input
+      <div align="center">
+        <Form onSubmit={this.onSubmit}>
+          <Form.Label>Create New a Room:</Form.Label>
+          <Form.Control 
             type="text"
             name="roomName"
             placeholder="Room Name"
@@ -79,8 +80,8 @@ class CreateRoomAndQuestions extends Component {
             onChangeQuestion={this.onChangeQuestion}
             // onSubmitQuestion={this.onSubmitQuestion}
           />
-          <button>Submit</button>
-        </form>
+       <Button type="Submit">Submit</Button>
+        </Form>
         <Link to="/rooms">Rooms</Link>
       </div>
     );

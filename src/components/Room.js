@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import superagent from "superagent";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import {Button,Modal,ListGroup} from "react-bootstrap"
+
 
 class Room extends Component {
+  
+ 
   onClick = async () => {
     const { jwt, match } = this.props;
     const { name } = match.params;
@@ -38,8 +41,10 @@ class Room extends Component {
       .set({ authorization: `Bearer ${jwt}` });
     console.log(response, "Ihave true test");
   };
+  
 
   render() {
+    
     // const { questions } = this.props;
     // //console.log("this.props test:", this.props);
     // if (!questions) {
@@ -75,7 +80,9 @@ class Room extends Component {
 
     const list =
       users && users.length ? (
-        users.map(user => <p key={user.userName}> {user.userName}</p>)
+        users.map(user => <ListGroup horizontal>
+          <ListGroup.Item key={user.userName}> {user.userName}</ ListGroup.Item>
+          </ListGroup>)
       ) : (
         <p> no users in this room</p>
       );
@@ -98,8 +105,17 @@ class Room extends Component {
     console.log(room.questions);
     const userList = users.map(user => {
       if (user.iHave === true) {
-        return <p>{user.userName} Has to drink🍺 </p>;
+        return  <Modal.Dialog >
+        <Modal.Header closeButton>
+          <Modal.Title>{user.userName} </Modal.Title>
+        </Modal.Header>
+      
+        <Modal.Body>
+          <p>Has to drink🍺.</p>
+        </Modal.Body> 
+        </Modal.Dialog>
       }
+     
     });
     //const content = !drink ? "both clicked" : "no body clicked ";
     console.log("after userList test");
@@ -107,10 +123,12 @@ class Room extends Component {
     console.log("room.round test:", room.round);
     return (
       <div>
+        
         <h1>{name}</h1>
-        <button onClick={() => this.sendChoice(true)}>I HAVE</button>
-        <button onClick={() => this.sendChoice(false)}>I HAVE NOT</button>
-        <button onClick={this.onClick}>JOIN</button>
+        
+        <Button className="one-btn"variant="outline-warning"onClick={() => this.sendChoice(true)} >I HAVE</Button>
+        <Button className="twobtn"variant="outline-warning"onClick={() => this.sendChoice(false)}>I HAVE NOT</Button>
+        <Button className="three-btn"variant="outline-warning"onClick={this.onClick}>JOIN</Button>
         {list}
         {room.round === null && <h1>{room.questions[0].question}</h1>}
         {room.round !== null && room.round < 5 && (
@@ -122,7 +140,8 @@ class Room extends Component {
           </h1>
         )} */}
         {!drink && userList}
-        <button onClick={() => this.nextQuestion()}>Next</button>
+        <Button variant="outline-warning"onClick={() => this.nextQuestion()}>Next</Button>
+        
       </div>
     );
   }

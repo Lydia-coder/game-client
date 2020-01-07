@@ -2,6 +2,7 @@ import React, { Component } from "react";
 //import superagent from "superagent";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import {Card,ListGroup,ButtonToolbar,Button} from "react-bootstrap"
 
 class Rooms extends Component {
   //   state = {
@@ -50,11 +51,16 @@ class Rooms extends Component {
       </p>
     ));
     return (
-      <main>
+      <main align="center">
+         <Card className="rooms-card" style={{ width: '18rem' }}>
         <div>
+       
           <h1 style={{fontSize:"40px", fontStyle: "bold"}}>Rooms </h1>
-          {list}
+          <ListGroup variant="flush"><ListGroup.Item>{list}</ListGroup.Item></ListGroup>
+          
+        
         </div>
+        </Card>
         {/* <div>
           <form onSubmit={this.onSubmit}>
             <label>Create New a Room:</label>
@@ -69,7 +75,7 @@ class Rooms extends Component {
           </form>
         </div> */}
         <Link to="/question">
-          <button type="button">Click Me!</button>
+        <Button className="rooms-btn" variant="outline-warning">New Room!</Button>
         </Link>
       </main>
     );
@@ -85,3 +91,11 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(Rooms);
+
+{/* 
+  
+  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+  <ListGroup.Item>Morbi leo risus</ListGroup.Item>
+  <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+  <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+</ListGroup> */}

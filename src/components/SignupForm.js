@@ -1,25 +1,27 @@
 import React from "react";
+import {Form,Button} from "react-bootstrap"
 
-export default function LoginForm(props) {
+
+export default function SignupForm(props) {
   return (
-    <form onSubmit={props.onSubmit}>
-      <label>user name:</label>
-      <input
-        type="text"
+    
+    <Form className="test" onSubmit={props.onSubmit}>
+      <Form.Label>user name</Form.Label>
+      <Form.Control  type="text"
         name="userName"
-        placeholder="userName"
+        placeholder="user name"
         value={props.values.email}
-        onChange={props.onChange}
-      />
-      <label>password:</label>
-      <input
-        type="text"
-        name="password"
-        placeholder="password"
-        value={props.values.password}
-        onChange={props.onChange}
-      />
-      <button type="Submit">SIGN UPPPPP</button>
-    </form>
-  );
-}
+        onChange={props.onChange} />
+     
+      
+      <Form.Label className="label-style"> password </Form.Label>
+      <Form.Control type="text"
+       type="text"
+       name="password"
+       placeholder="password"
+       value={props.values.password}
+       onChange={props.onChange} />
+      <Button type="Submit">SIGN UP</Button>
+    </Form>
+    
+  )}

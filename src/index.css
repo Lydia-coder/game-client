@@ -3,13 +3,48 @@ body {
   font-family: 'Indie Flower', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image:url("https://filesedc.com/uploads/273/img/2019/10/1200/never-have-i-ever-questions-5dad5e5702ee0.jpg");
-  background-size: cover;
+  background-image: url("https://theultralinx.com/.image/t_share/MTMyNjI4MDgwNjEwMDQ1OTIy/beer-cheers___gif.gif");
+
+
   text-align: center;
   margin-top: 200px;
 }
+body h1{
+  font-family: 'Indie Flower', cursive;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.test{
+ width: 8rem; 
+ margin: auto;
+}
+.card-style{
+  margin: auto;
+ 
+}
+.rooms-card{
+  margin:auto;
+  margin-bottom: 20px !important;
+}
+.question-form{
+  width: 290px; 
+ margin: auto;
+}
+.quest-btn{
+  margin:auto !important;
+}
+.one-btn{
+  margin-right: 3px;
+}
+.two-btn{
+  margin-left: 3px;
+ 
+}
+.three-btn{
+  margin-left: 3px;
 }
