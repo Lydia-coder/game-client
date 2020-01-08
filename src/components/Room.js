@@ -1,11 +1,22 @@
 import React, { Component } from "react";
 import superagent from "superagent";
 import { connect } from "react-redux";
-import {Button,Modal,ListGroup} from "react-bootstrap"
+import {Button,Modal,Badge} from "react-bootstrap"
 
 
 class Room extends Component {
-  
+  constructor(props){
+    super(props)
+    
+    this.state={
+      showContent: true
+    }
+  }
+  toggleContent=(state) =>{
+   
+    this.setState({showContent:state })
+    
+  }
  
   onClick = async () => {
     const { jwt, match } = this.props;
@@ -45,16 +56,7 @@ class Room extends Component {
 
   render() {
     
-    // const { questions } = this.props;
-    // //console.log("this.props test:", this.props);
-    // if (!questions) {
-    //   return null;
-    // }
-
-    // //console.log("rooms test:", rooms);
-    // const listQuestion = questions.map(question => (
-    //   <p key={question}>{question}</p>
-    // ));
+    const {showContent,toggleContent}=this.state
 
     const { name } = this.props.match.params;
     const { rooms } = this.props;
@@ -80,9 +82,8 @@ class Room extends Component {
 
     const list =
       users && users.length ? (
-        users.map(user => <ListGroup horizontal>
-          <ListGroup.Item key={user.userName}> {user.userName}</ ListGroup.Item>
-          </ListGroup>)
+        users.map(user => <ul><li key={user.userName}> <Badge pill variant="warning">{user.userName}</Badge></ li></ul>
+        )
       ) : (
         <p> no users in this room</p>
       );
@@ -105,15 +106,19 @@ class Room extends Component {
     console.log(room.questions);
     const userList = users.map(user => {
       if (user.iHave === true) {
-        return  <Modal.Dialog >
-        <Modal.Header closeButton>
+        return  <Modal show={showContent} onHide={()=>{this.toggleContent(false)}}>
+        
+          
+        <Modal.Header closeButton  >
           <Modal.Title>{user.userName} </Modal.Title>
         </Modal.Header>
       
         <Modal.Body>
-          <p>Has to drink🍺.</p>
+          {showContent===true ?<p>Has to drink🍺</p> :""}
+          
         </Modal.Body> 
-        </Modal.Dialog>
+        
+        </Modal>
       }
      
     });
@@ -126,7 +131,7 @@ class Room extends Component {
         
         <h1>{name}</h1>
         
-        <Button className="one-btn"variant="outline-warning"onClick={() => this.sendChoice(true)} >I HAVE</Button>
+        <Button className="one-btn"variant="outline-warning"onClick={() => {this.sendChoice(true)}} >I HAVE</Button>
         <Button className="twobtn"variant="outline-warning"onClick={() => this.sendChoice(false)}>I HAVE NOT</Button>
         <Button className="three-btn"variant="outline-warning"onClick={this.onClick}>JOIN</Button>
         {list}
