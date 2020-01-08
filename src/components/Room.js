@@ -77,12 +77,13 @@ class Room extends Component {
           <p key={question.question}> {question.question}</p>
         ))
       ) : (
-        <p> no questions in this room</p>
+        <p > no questions in this room</p>
       );
 
     const list =
       users && users.length ? (
-        users.map(user => <ul><li key={user.userName}> <Badge pill variant="warning">{user.userName}</Badge></ li></ul>
+        users.map(user => 
+          <p  key={user.userName}> <Badge pill variant="warning">{user.userName}</Badge></p>
         )
       ) : (
         <p> no users in this room</p>
@@ -90,17 +91,6 @@ class Room extends Component {
     const drink = users.every(user => user.iHave === null);
 
     console.log("hello", drink);
-    // const { questions } = this.props;
-    // //console.log("this.props test:", this.props);
-    // if (!questions) {
-    //   return null;
-    // }
-
-    // //console.log("rooms test:", rooms);
-    // const listQuestion = questions.map(question => (
-    //   <p key={question}>{question}</p>
-    // ));
-
     console.log("room test", room);
     console.log(name, "test");
     console.log(room.questions);
@@ -114,7 +104,7 @@ class Room extends Component {
         </Modal.Header>
       
         <Modal.Body>
-          {showContent===true ?<p>Has to drink🍺</p> :""}
+          <p>Has to drink🍺</p> 
           
         </Modal.Body> 
         
@@ -122,31 +112,29 @@ class Room extends Component {
       }
      
     });
-    //const content = !drink ? "both clicked" : "no body clicked ";
-    console.log("after userList test");
+    
+  console.log("after userList test");
     console.log("room.questions test:", room.questions);
     console.log("room.round test:", room.round);
     return (
       <div>
         
-        <h1>{name}</h1>
+        <h1 style={{fontSize:"65px",
+        fontFamily:"Pacifico",fontStyle:"cursive",color:"#ffc107"}} align="center">{name}</h1>
         
         <Button className="one-btn"variant="outline-warning"onClick={() => {this.sendChoice(true)}} >I HAVE</Button>
         <Button className="twobtn"variant="outline-warning"onClick={() => this.sendChoice(false)}>I HAVE NOT</Button>
-        <Button className="three-btn"variant="outline-warning"onClick={this.onClick}>JOIN</Button>
-        {list}
+     {list}
+        
         {room.round === null && <h1>{room.questions[0].question}</h1>}
         {room.round !== null && room.round < 5 && (
-          <h2>{room.questions[room.round].question}</h2>
+          <h2 align="center" style={{color:"#ffc107",fontFamily: "Amatic SC", fontStyle: "cursive", fontSize:"55px"}}>{room.questions[room.round].question}</h2>
         )}
-        {/* {room.round === 5 && (
-          <h1>
-            <Link to="/rooms"></Link>{" "}
-          </h1>
-        )} */}
-        {!drink && userList}
-        <Button variant="outline-warning"onClick={() => this.nextQuestion()}>Next</Button>
-        
+         {!drink && userList}
+       
+        <Button className="four-btn"variant="warning"onClick={() => this.nextQuestion()}>Next</Button>
+        <Button className="three-btn"variant="warning"onClick={this.onClick}>JOIN</Button>
+       
       </div>
     );
   }
@@ -161,27 +149,3 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps)(Room);
 
-// baseUrl = "https://evening-scrubland-81754.herokuapp.com";
-
-// state = {
-//   questions: [],
-//   value: ""
-// };
-// componentDidMount() {}
-
-// onChange = event => {
-//   const { value } = event.target;
-
-//   this.setState({ value: value });
-// };
-// onSubmit = event => {
-//   event.preventDefault();
-
-//   const { value } = this.state;
-
-//   const { name } = this.props.match.params;
-
-//   const url = `${this.baseUrl}/group/${name}`;
-
-//   request.post(url).send({});
-// };

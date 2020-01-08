@@ -5,36 +5,7 @@ import { Link } from "react-router-dom";
 import {Card,ListGroup,ButtonToolbar,Button} from "react-bootstrap"
 
 class Rooms extends Component {
-  //   state = {
-  //     value: ""
-  //   };
-  //   // url = "https://evening-scrubland-81754.herokuapp.com";
-  //   url = "http://localhost:4000";//DONT FORGET IT'S HTTP!! WITHOUT SSSSSS !! BRO!
-  //   componentDidUpdate() {
-  //     if(this.props.user.length !== 0){
-  // this.props.history.push("/question")
-  //     }
-  //   }
-
-  //   onChange = event => {
-  //     const { input } = event.target;
-  //     this.setState({value: input});
-  //   };
-
-  //   onSubmit = event => {
-  //     event.preventDefault();
-  //     const { value } = this.state; // const value = this.state.value
-
-  //     const postUrl = `${this.url}/room`;
-  //     console.log({ postUrl, roomName: value });
-  //     superagent
-  //       .post(postUrl)
-  //       .send({ roomName: value })
-  //       .then(res => {
-  //         console.log(res, "res test");
-  //       });
-  //   };
-
+     
   render() {
     const { rooms } = this.props;
     //console.log("this.props test:", this.props);
@@ -45,35 +16,24 @@ class Rooms extends Component {
     //console.log("rooms test:", rooms);
     const list = rooms.map(room => (
       <p key={room.name}>
-        <Link to={`/room/${room.roomName}`} key={room.roomName} style={{color:"black", fontSize:"30px", fontStyle:"bold"}}>
+        <Link to={`/room/${room.roomName}`} key={room.roomName} 
+        style={{color:"black", fontSize:"40px", fontStyle:"cursive", fontFamily:'Amatic SC'}}>
           {room.roomName}
         </Link>
       </p>
     ));
     return (
       <main align="center">
-         <Card className="rooms-card" style={{ width: '18rem' }}>
+         <Card className="rooms-card" style={{ width: '18rem',border:"solid",borderColor:"#ffc107"}}>
         <div>
        
-          <h1 style={{fontSize:"40px", fontStyle: "bold"}}>Rooms </h1>
-          <ListGroup variant="flush"><ListGroup.Item>{list}</ListGroup.Item></ListGroup>
+          <h1 className="room-name"style={{fontSize:"40px", fontStyle: "bold"}}>Rooms </h1>
+          <ListGroup ><ListGroup.Item>{list}</ListGroup.Item></ListGroup>
           
         
         </div>
         </Card>
-        {/* <div>
-          <form onSubmit={this.onSubmit}>
-            <label>Create New a Room:</label>
-            <input
-              type="text"
-              name="roomName"
-              placeholder="Room Name"
-              value={this.state.value}
-              onChange={this.onChange}
-            />
-            
-          </form>
-        </div> */}
+        
         <Link to="/question">
         <Button className="rooms-btn" variant="outline-warning">New Room!</Button>
         </Link>

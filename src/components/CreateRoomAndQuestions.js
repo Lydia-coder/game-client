@@ -36,16 +36,7 @@ class CreateRoomAndQuestions extends Component {
     });
     console.log(this.state.questions, "where???");
   }
-  // onSubmitQuestion = event => {
-  //   event.preventDefault();
-  //   const questions = this.state.questions;
-
-  //   const postUrl = `${this.url}/question`;
-  //   superagent
-  //     .post(postUrl)
-  //     .send({ questions })
-  //     .then(res => console.log({ responseQUESTIONSSSSSSSS: res }));
-  // };
+  
 
   onSubmit = event => {
     console.log(this.state.roomName);
@@ -67,8 +58,9 @@ class CreateRoomAndQuestions extends Component {
     return (
       <div align="center">
         <Form onSubmit={this.onSubmit}>
-          <Form.Label>Create New a Room:</Form.Label>
+          <Form.Label style={{color:"#ffc107",fontSize: "35px",fontStyle:"cursive",fontFamily:'Pacifico'}}>Create New a Room:</Form.Label>
           <Form.Control 
+          style={{width:"200px"}}
             type="text"
             name="roomName"
             placeholder="Room Name"
@@ -80,9 +72,9 @@ class CreateRoomAndQuestions extends Component {
             onChangeQuestion={this.onChangeQuestion}
             // onSubmitQuestion={this.onSubmitQuestion}
           />
-       <Button type="Submit">Submit</Button>
+       <Button variant="warning" type="Submit">Submit</Button>
         </Form>
-        <Link to="/rooms">Rooms</Link>
+        <Link style={{color:"#ffc107"}} to="/rooms">Rooms</Link>
       </div>
     );
   }

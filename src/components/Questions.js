@@ -7,7 +7,7 @@ export default class Questions extends Component {
     return (
       <div>
         <Form className="question-form">
-    <h1>QUESTIONS</h1>
+    <h2 >QUESTIONS</h2>
         <Form.Label> 1: </Form.Label>
         <Form.Control 
           type="text"
