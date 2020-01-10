@@ -2,7 +2,7 @@
 
 
 #  Never have I ever 
-## [ Check out the deployed version here! ]
+## DEMO
 ![Never have I ever ](https://github.com/Lydia-coder/game-client/blob/master/src/NeverhaveIever.gif)
 ## What this project is about
 
