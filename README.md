@@ -15,8 +15,7 @@ This is a multiplayer online drinking game called "never have I ever". In this g
 - **[Requirements briefing](#requirements)**
 
 
-- **[My agile workflow and trello board](#my-agile-workflow-and-trello-board)**
-- **[create-react-app-docs](#create-react-app)**
+
 
 ## Technologies used
 
