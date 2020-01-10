@@ -56,7 +56,7 @@ class Room extends Component {
 
   render() {
     
-    const {showContent,toggleContent}=this.state
+    const {showContent}=this.state
 
     const { name } = this.props.match.params;
     const { rooms } = this.props;
