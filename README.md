@@ -38,11 +38,6 @@ This is a multiplayer online drinking game called "never have I ever". In this g
 
 Checkout out: **[requirements.md](Requirements.md)**
 
-## Features built so far overview with pull requests
-
-#### 👀👇 Click links to view the pull requests 👇👀
-
-- **[]()**
 
 
 ## Our git workflow
@@ -53,7 +48,7 @@ In this project we try to use:
 - Well named branches
 - Pull requests with summaries
 
-If you have feedback to improve our git usage: **[please drop me a line!](https://www.linkedin.com/in/eslam-haridy-0b14316a/)** 
+If you have feedback to improve our git usage: **[please drop me a line!](https://www.linkedin.com/in/lydia-michael-smeets/)** 
 
 Here is our branching model for this project.
 
