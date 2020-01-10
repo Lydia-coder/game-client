@@ -3,7 +3,7 @@
 
 #  Never have I ever 
 ## [ Check out the deployed version here! ]
-![Never have I ever ](NeverhaveIever.gif)
+![Never have I ever ](https://github.com/Lydia-coder/game-client/blob/master/src/NeverhaveIever.gif)
 ## What this project is about
 
 This is a multiplayer online drinking game called "never have I ever". In this game the user can sign up and login and after that create a room to play in. After creating a room the player can fill out 5 questions to play in that room. Other users can join the game. After every answer the players get a response telling which player needs to drink. Then the players can click next question. It's fun game to play with friends!, please checkout: **[Goals for this project](#goals-for-this-project)**
